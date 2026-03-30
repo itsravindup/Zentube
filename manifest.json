@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "ZenTube",
+  "version": "1.0.0",
+  "description": "Transform YouTube into a distraction-free, mindful experience. Remove feeds, shorts, comments and stay in control.",
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "action": {
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    },
+    "default_title": "ZenTube — Stay Focused"
+  },
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.youtube.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.youtube.com/*"],
+      "js": [
+        "utils/helpers.js",
+        "utils/storage.js",
+        "content/features/homepage.js",
+        "content/features/sidebar.js",
+        "content/features/shorts.js",
+        "content/features/comments.js",
+        "content/features/blur.js",
+        "content/features/tracker.js",
+        "content/features/theme.js",
+        "content/content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["focus-homepage/*"],
+      "matches": ["https://www.youtube.com/*"]
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+# 🧘 ZenTube — Chrome Extension Full Specification
+
+## 📌 Overview
+
+ZenTube is a Chrome Extension (Manifest V3) designed to transform YouTube into a distraction-free, productivity-focused platform. It removes addictive UI elements, provides user-controlled filtering, and promotes mindful content consumption.
+
+---
+
+## 🎯 Core Objective
+
+Reduce distractions on YouTube by:
+
+* Removing algorithm-driven content
+* Limiting visual triggers
+* Giving users full control over what is visible
+
+---
+
+## 🧱 Tech Stack
+
+* Chrome Extension (Manifest V3)
+* JavaScript (Vanilla)
+* HTML + CSS (Popup UI)
+* Chrome Storage API (`chrome.storage.sync`)
+* DOM Manipulation (Content Scripts)
+* MutationObserver (for dynamic updates)
+
+---
+
+## 📁 Project Structure
+
+zentube/
+│
+├── manifest.json
+├── content/
+│   ├── content.js
+│   ├── features/
+│   │   ├── homepage.js
+│   │   ├── sidebar.js
+│   │   ├── shorts.js
+│   │   ├── comments.js
+│   │   ├── blur.js
+│   │   ├── tracker.js
+│
+├── popup/
+│   ├── popup.html
+│   ├── popup.js
+│   ├── popup.css
+│
+├── utils/
+│   ├── storage.js
+│
+└── icons/
+
+---
+
+## ⚙️ Manifest Configuration
+
+* manifest_version: 3
+* permissions:
+
+  * storage
+* host_permissions:
+
+  * https://www.youtube.com/*
+* content_scripts:
+
+  * Runs on YouTube pages
+* action:
+
+  * popup.html as UI
+
+---
+
+## 🧠 Settings Schema
+
+All user preferences are stored in chrome.storage.sync as:
+
+{
+"focusMode": true,
+"hideHomepage": true,
+"hideSidebarWatch": true,
+"hideSidebarAll": false,
+"hideShorts": true,
+"hideComments": true,
+"blurThumbnails": false,
+"timeTracker": true,
+"blockedKeywords": [],
+"blockedChannels": []
+}
+
+---
+
+## 🧩 Core Features
+
+### 1. Focus Mode (Master Control)
+
+* Enables/disables all filtering features
+* If disabled, extension does nothing
+
+---
+
+### 2. Hide Homepage Feed
+
+* Target: YouTube homepage grid
+* Remove:
+
+  * ytd-rich-grid-renderer
+* Purpose: Eliminate algorithmic recommendations
+
+---
+
+### 3. Hide Sidebar Recommendations
+
+* Target: #related
+* Two modes:
+
+  * Watch-only mode
+  * Global hide mode
+
+---
+
+### 4. Hide Shorts
+
+* Targets:
+
+  * ytd-reel-shelf-renderer
+  * links containing "/shorts/"
+* Remove Shorts from homepage and search
+
+---
+
+### 5. Hide Comments
+
+* Target:
+
+  * #comments
+* Remove entire comments section
+
+---
+
+### 6. Blur Thumbnails
+
+* Target:
+
+  * ytd-thumbnail img
+* Apply CSS:
+  filter: blur(8px)
+
+---
+
+### 7. Time Tracker
+
+* Track time spent on YouTube
+* Store:
+
+  * daily usage
+  * session duration
+* Use background timing logic or tab activity detection
+
+---
+
+### 8. Keyword Blocking
+
+* Hide videos where title contains blocked keywords
+
+---
+
+### 9. Channel Blocking
+
+* Hide videos from selected channels
+
+---
+
+### 10. Popup Control Panel
+
+UI includes:
+
+* Toggle switches:
+
+  * Focus Mode
+  * Hide Homepage
+  * Hide Sidebar
+  * Hide Shorts
+  * Hide Comments
+  * Blur Thumbnails
+  * Time Tracker
+
+* Save settings instantly
+
+* Show “Settings Updated” message
+
+---
+
+## 🔄 Content Script Behavior
+
+* Load settings from storage
+* If focusMode = false → exit
+* Apply features based on toggles
+* Use MutationObserver to reapply changes dynamically
+
+---
+
+## �� DOM Handling Strategy
+
+* Use document.querySelector()
+* Use MutationObserver for SPA navigation
+* Avoid heavy polling
+
+---
+
+## ⚡ Performance Considerations
+
+* Run only on YouTube pages
+* Minimize DOM queries
+* Use efficient selectors
+* Avoid unnecessary reflows
+
+---
+
+## 🔐 Privacy & Security
+
+* No external API calls (initial version)
+* No user data collection
+* Only local storage usage
+* Minimal permissions
+
+---
+
+## 🎨 UI/UX Design Guidelines
+
+* Dark theme by default
+* Minimalist layout
+* Smooth toggle switches
+* Soft green accent color (Zen theme)
+* Clean typography
+
+---
+
+## 🚀 Future Enhancements
+
+* AI-based content filtering
+* Productivity dashboard
+* Time limit enforcement (Pomodoro mode)
+* Educational content prioritization
+* Cross-device sync enhancements
+
+---
+
+## 🧪 Testing Requirements
+
+* Works on:
+
+  * Homepage
+  * Watch page
+  * Search page
+* Handles dynamic page changes
+* No console errors
+* Settings persist after reload
+
+---
+
+## 🎯 Success Criteria
+
+* User opens YouTube → distractions removed
+* Extension works without breaking UI
+* Smooth, fast, and responsive
+* Clean user experience
+
+---
+
+## 🧠 Development Approach
+
+* Build feature-by-feature
+* Test after each feature
+* Refactor code regularly
+* Maintain modular structure
+
+---
+
+## 📌 Final Goal
+
+A production-ready Chrome Extension that:
+
+* Improves focus
+* Reduces addictive behavior
+* Provides a calm, controlled YouTube experience
+
+ZenTube = YouTube, but mindful.

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenTube — Stay Focused</title>
+    <!-- Fonts and Icons -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body class="zen-body">
+    <!-- Ambient Background Element -->
+    <div class="ambient-glow"></div>
+
+    <!-- Top Navigation / Timer Bar -->
+    <header class="zen-header fade-in">
+        <div class="timer-container group">
+            <span class="icon-timer">timer</span>
+            <span id="zen-timer" class="timer-text">25:00</span>
+            <div class="timer-pulse"></div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="zen-main">
+        <!-- Branding Section -->
+        <section class="zen-brand fade-in">
+            <div class="zen-logo-box group">
+                <div class="zen-logo-gradient"></div>
+                <span class="zen-logo-char">Z</span>
+            </div>
+            <h1 class="zen-title">ZenTube</h1>
+            <p class="zen-tagline">Intentional Viewing</p>
+        </section>
+
+        <!-- Search Section -->
+        <section class="zen-search-section fade-in">
+            <div class="search-outer group">
+                <div class="search-glow"></div>
+                <div class="search-inner">
+                    <div class="search-icon-wrapper">
+                        <span class="icon-search">search</span>
+                    </div>
+                    <form id="search-form" class="search-form">
+                        <input type="text" id="search-input" placeholder="Search with intention..." autocomplete="off">
+                    </form>
+                    <button id="search-btn" class="search-action-btn">
+                        <span class="icon-arrow">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Motivational Quote -->
+            <div class="quote-container">
+                <p id="zen-quote" class="zen-quote">"You came here to learn. Don't get distracted."</p>
+                <div class="quote-dots">
+                    <span></span><span></span><span></span>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Controls -->
+    <footer class="zen-footer fade-in">
+        <button class="footer-btn">
+            <span class="icon-settings">settings</span>
+            <span class="btn-text">Preferences</span>
+        </button>
+        <button class="footer-btn">
+            <span class="icon-zen">auto_awesome</span>
+            <span class="btn-text">Zen Mode</span>
+        </button>
+        <button class="footer-btn">
+            <span class="icon-history">history</span>
+            <span class="btn-text">Mindful Log</span>
+        </button>
+    </footer>
+
+    <!-- Corner Accents -->
+    <div class="accent-top-left"></div>
+    <div class="accent-bottom-right"></div>
+
+    <script src="./script.js"></script>
+</body>
+</html>

@@ -1,0 +1,321 @@
+# 🧘 ZenTube — Cinematic UI System (Adapted Spec)
+
+## 📌 Overview
+
+ZenTube is a **distraction-free YouTube control system**.
+This UI should feel like a **calm control interface**, not a flashy website.
+
+> “You are not browsing YouTube. You are controlling it.”
+
+---
+
+## 🎯 Core Identity
+
+* Product Type: Chrome Extension + Landing Page
+* Core Emotion: **Calm, Control, Clarity**
+* Experience Style: **Minimal, intentional, distraction-free**
+
+---
+
+## 🎨 Aesthetic Direction (Customized Preset)
+
+### 🔹 Preset — "Zen Minimal System" (Custom from your guide)
+
+Inspired by:
+
+* Midnight Luxe (dark premium)
+* Organic Tech (calm natural feel)
+
+---
+
+### 🎨 Palette
+
+* Background: `#0F1115` (Deep calm dark)
+* Surface: `#161A20`
+* Primary Accent: `#00C896` (Zen green)
+* Secondary Accent: `#7BE0B8`
+* Text Primary: `#E6EAF0`
+* Text Secondary: `#9AA4B2`
+
+---
+
+### 🔤 Typography
+
+* Headings: **Inter (Bold, tight tracking)**
+* Accent / Emotion: **Playfair Display Italic**
+* Data/UI: **JetBrains Mono**
+
+---
+
+### 🧠 Identity Feel
+
+* Not loud
+* Not techy
+* Not corporate
+
+👉 Feels like:
+
+> A **focus tool designed by monks + engineers**
+
+---
+
+## 🧱 Chrome Extension UI (IMPORTANT — Your actual product)
+
+---
+
+## 🧘 POPUP UI — "Zen Control Panel"
+
+### Layout:
+
+* Rounded container (`rounded-2xl`)
+* Dark glass effect (`backdrop-blur`)
+* Soft shadows
+
+---
+
+### Sections:
+
+#### 1. Header
+
+* Logo: “🧘 ZenTube”
+* Subtitle: “Stay focused. Stay Zen.”
+
+---
+
+#### 2. Master Toggle
+
+* Large switch:
+
+  * **Focus Mode ON/OFF**
+* Highlighted in green when active
+
+---
+
+#### 3. Feature Toggles (Core Controls)
+
+Each item:
+
+* Left: label
+* Right: toggle switch
+
+Features:
+
+* Hide Homepage Feed
+* Hide Sidebar Recommendations
+* Hide Shorts
+* Hide Comments
+* Blur Thumbnails
+* Time Tracker
+
+---
+
+#### 4. Feedback Banner
+
+* “Settings Updated ✓”
+* Fade in/out animation
+
+---
+
+#### 5. Footer Note
+
+* “You are in control.”
+
+---
+
+## 🎛️ Interaction Design
+
+* Toggle ON:
+
+  * Smooth transition
+  * Slight glow effect
+* Hover:
+
+  * `scale(1.02)`
+* Click:
+
+  * subtle press animation
+
+---
+
+## 🌐 LANDING PAGE SYSTEM (Adapted from your file)
+
+(Based on your original structure )
+
+---
+
+## A. NAVBAR — "Floating Calm Bar"
+
+* Centered pill container
+* Transparent → blurred on scroll
+* Contains:
+
+  * ZenTube logo
+  * Features
+  * How it Works
+  * CTA: “Install Extension”
+
+---
+
+## B. HERO — "Control, Not Chaos"
+
+### Layout:
+
+* Full screen
+* Dark gradient + subtle texture
+
+### Headline Pattern:
+
+* “Control your” (Inter Bold)
+* “Attention.” (Playfair Italic large)
+
+---
+
+### CTA:
+
+* “Install ZenTube”
+
+---
+
+## C. FEATURES — "Control Modules"
+
+### Card 1 — “Distraction Cleaner”
+
+* Animation: elements disappearing
+* Message: Remove noise instantly
+
+---
+
+### Card 2 — “Focus Engine”
+
+* Typewriter:
+
+  * “Shorts blocked…”
+  * “Comments hidden…”
+  * “Focus active…”
+
+---
+
+### Card 3 — “Control Scheduler”
+
+* UI grid showing:
+
+  * Focus sessions
+  * Active days
+
+---
+
+## D. PHILOSOPHY — "The Manifesto"
+
+Text:
+
+* “Most platforms maximize engagement.”
+* “We maximize clarity.”
+
+Accent word:
+👉 **Clarity** (highlighted)
+
+---
+
+## E. PROTOCOL — "How ZenTube Works"
+
+### Step 1
+
+Detect distractions
+(visual: scanning animation)
+
+### Step 2
+
+Apply filters
+(visual: UI elements fading out)
+
+### Step 3
+
+Restore focus
+(visual: calm interface)
+
+---
+
+## F. CTA SECTION
+
+* “Take control of your time.”
+* Button: “Install ZenTube”
+
+---
+
+## G. FOOTER
+
+* Brand
+* Links
+* Status:
+
+  * 🟢 “System: Focus Active”
+
+---
+
+## ⚙️ Interaction System
+
+### Animations:
+
+* GSAP (as in your guide)
+* Smooth fade + slide
+* No aggressive motion
+
+---
+
+### Micro-interactions:
+
+* Buttons:
+
+  * scale(1.03)
+* Cards:
+
+  * subtle lift
+* Toggles:
+
+  * smooth transitions
+
+---
+
+## 🧠 Product UX Rules (CRITICAL)
+
+* No clutter
+* No bright distracting colors
+* Everything must feel:
+
+  * intentional
+  * calm
+  * controlled
+
+---
+
+## 🚀 Final Experience Goal
+
+User installs ZenTube →
+
+YouTube opens →
+
+👉 No chaos
+👉 No distractions
+👉 Only intentional content
+
+---
+
+## �� Philosophy Statement
+
+> “ZenTube doesn’t add features.
+> It removes everything you don’t need.”
+
+---
+
+## 📌 Execution Directive
+
+Do not build a flashy UI.
+Build a **calm control system for attention**.
+
+Every animation must feel:
+
+* intentional
+* subtle
+* meaningful
+
+ZenTube = Control over chaos.
