@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&amp;family=Inter:wght@300;400;500&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "error": "#ffb4ab",
+              "primary-container": "#12b886",
+              "primary-fixed": "#70fbc4",
+              "primary-fixed-dim": "#50dea9",
+              "outline": "#86948b",
+              "on-tertiary-fixed": "#002116",
+              "outline-variant": "#3c4a42",
+              "surface-container": "#201f1f",
+              "on-surface": "#e5e2e1",
+              "on-tertiary-fixed-variant": "#00513a",
+              "surface-variant": "#353534",
+              "on-secondary-fixed": "#121c2c",
+              "tertiary-fixed": "#67fcc6",
+              "on-primary-fixed": "#002115",
+              "on-secondary-container": "#abb5cb",
+              "background": "#131313",
+              "on-primary-fixed-variant": "#005139",
+              "on-error-container": "#ffdad6",
+              "surface-container-low": "#1c1b1b",
+              "error-container": "#93000a",
+              "on-error": "#690005",
+              "surface-tint": "#50dea9",
+              "tertiary-fixed-dim": "#44dfab",
+              "inverse-on-surface": "#313030",
+              "surface-container-lowest": "#0e0e0e",
+              "secondary-container": "#3d4759",
+              "secondary-fixed": "#d9e3f9",
+              "surface-dim": "#131313",
+              "on-tertiary": "#003827",
+              "on-tertiary-container": "#00412e",
+              "surface-container-high": "#2a2a2a",
+              "tertiary": "#44dfab",
+              "on-primary": "#003826",
+              "on-background": "#e5e2e1",
+              "on-secondary": "#273141",
+              "primary": "#50dea9",
+              "inverse-surface": "#e5e2e1",
+              "tertiary-container": "#00b889",
+              "surface-bright": "#3a3939",
+              "on-secondary-fixed-variant": "#3d4759",
+              "on-primary-container": "#00412d",
+              "surface": "#131313",
+              "secondary-fixed-dim": "#bdc7dc",
+              "secondary": "#bdc7dc",
+              "surface-container-highest": "#353534",
+              "inverse-primary": "#006c4d",
+              "on-surface-variant": "#bbcac0"
+            },
+            fontFamily: {
+              "headline": ["Manrope"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .zen-glow {
+            text-shadow: 0 0 20px rgba(80, 222, 169, 0.2);
+        }
+        .glass-panel {
+            backdrop-filter: blur(24px);
+            background: rgba(28, 27, 27, 0.6);
+        }
+    </style>
+</head>
+<body class="bg-surface-container-lowest text-on-surface font-body selection:bg-primary/30 selection:text-primary min-h-screen overflow-hidden flex flex-col">
+<!-- Top Navigation / Timer Bar -->
+<header class="fixed top-0 w-full z-50 px-8 py-6 flex justify-between items-center bg-transparent">
+<div class="flex items-center gap-2">
+<!-- Reserved for potential back button or logo if needed, keeping minimal as per request -->
+</div>
+<!-- Subtle Focus Timer -->
+<div class="flex items-center gap-3 glass-panel px-5 py-2.5 rounded-full border border-outline-variant/10 shadow-sm transition-all duration-500 hover:border-primary/20 group">
+<span class="material-symbols-outlined text-primary-fixed-dim text-lg" data-icon="timer">timer</span>
+<span class="font-headline font-semibold tracking-widest text-on-surface-variant group-hover:text-primary transition-colors">25:00</span>
+<div class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse shadow-[0_0_8px_rgba(80,222,169,0.5)]"></div>
+</div>
+</header>
+<!-- Main Content: Digital Meditation Space -->
+<main class="flex-grow flex flex-col items-center justify-center px-6 relative">
+<!-- Ambient Background Element -->
+<div class="absolute inset-0 pointer-events-none overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-primary/5 rounded-full blur-[120px]"></div>
+</div>
+<!-- Branding Section -->
+<div class="flex flex-col items-center mb-16 space-y-4 text-center z-10">
+<!-- Modern 'Z' Logo -->
+<div class="w-20 h-20 mb-2 flex items-center justify-center rounded-2xl bg-surface-container-low border border-outline-variant/20 shadow-2xl relative group transition-transform duration-700 hover:scale-105">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent rounded-2xl opacity-50"></div>
+<span class="text-4xl font-headline font-extrabold text-primary tracking-tighter zen-glow">Z</span>
+</div>
+<h1 class="text-5xl md:text-6xl font-headline font-bold tracking-tighter text-on-surface zen-glow">
+                ZenTube
+            </h1>
+<p class="text-on-surface-variant font-body font-light tracking-widest uppercase text-xs opacity-60">Intentional Viewing</p>
+</div>
+<!-- Search with Intention -->
+<div class="w-full max-w-2xl z-10 space-y-8">
+<div class="relative group">
+<div class="absolute -inset-1 bg-gradient-to-r from-primary/20 to-tertiary/20 rounded-full blur-xl opacity-0 group-focus-within:opacity-100 transition-opacity duration-700"></div>
+<div class="relative flex items-center bg-surface-container-low hover:bg-surface-container transition-all duration-300 rounded-full p-2 border border-outline-variant/10 focus-within:border-primary/30">
+<div class="pl-6 pr-4 flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="search">search</span>
+</div>
+<input class="w-full bg-transparent border-none focus:ring-0 text-on-surface placeholder:text-on-surface-variant/40 py-4 text-lg font-body font-light tracking-wide" placeholder="Search with intention..." type="text"/>
+<button class="bg-surface-container-high hover:bg-primary-container text-on-surface-variant hover:text-on-primary-container transition-all duration-300 w-12 h-12 flex items-center justify-center rounded-full mr-1">
+<span class="material-symbols-outlined" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+<!-- Motivational Quote -->
+<div class="text-center space-y-2">
+<p class="text-on-surface-variant/50 font-body italic font-light tracking-wide text-sm max-w-sm mx-auto leading-relaxed">
+                    "You came here to learn. Don't get distracted."
+                </p>
+<div class="flex justify-center gap-1.5 pt-4">
+<span class="w-1 h-1 rounded-full bg-primary/20"></span>
+<span class="w-1 h-1 rounded-full bg-primary/40"></span>
+<span class="w-1 h-1 rounded-full bg-primary/20"></span>
+</div>
+</div>
+</div>
+</main>
+<!-- Footer Settings / Minimal Controls -->
+<footer class="fixed bottom-0 w-full px-12 py-10 flex justify-center gap-12 z-50">
+<button class="flex items-center gap-2 text-on-surface-variant/40 hover:text-primary transition-colors duration-300 group">
+<span class="material-symbols-outlined text-lg" data-icon="settings">settings</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Preferences</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant/40 hover:text-primary transition-colors duration-300 group">
+<span class="material-symbols-outlined text-lg" data-icon="auto_awesome">auto_awesome</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Zen Mode</span>
+</button>
+<button class="flex items-center gap-2 text-on-surface-variant/40 hover:text-primary transition-colors duration-300 group">
+<span class="material-symbols-outlined text-lg" data-icon="history">history</span>
+<span class="text-[10px] uppercase tracking-widest font-bold">Mindful Log</span>
+</button>
+</footer>
+<!-- Decorative Corner Accents -->
+<div class="fixed top-0 left-0 w-64 h-64 bg-primary/2 blur-[100px] pointer-events-none"></div>
+<div class="fixed bottom-0 right-0 w-96 h-96 bg-tertiary/2 blur-[120px] pointer-events-none"></div>
+</body></html>

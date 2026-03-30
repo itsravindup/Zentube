@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ZenTube Premium Focus</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "tertiary-fixed": "#67fcc6",
+                "on-secondary-fixed": "#121c2c",
+                "surface-container-lowest": "#0e0e0e",
+                "secondary": "#bdc7dc",
+                "primary-fixed-dim": "#50dea9",
+                "on-surface-variant": "#bbcac0",
+                "tertiary-fixed-dim": "#44dfab",
+                "outline": "#86948b",
+                "primary-fixed": "#70fbc4",
+                "primary": "#50dea9",
+                "inverse-surface": "#e5e2e1",
+                "on-tertiary-fixed-variant": "#00513a",
+                "on-tertiary-fixed": "#002116",
+                "secondary-container": "#3d4759",
+                "on-tertiary": "#003827",
+                "error": "#ffb4ab",
+                "on-surface": "#e5e2e1",
+                "tertiary-container": "#00b889",
+                "inverse-on-surface": "#313030",
+                "error-container": "#93000a",
+                "surface-container-low": "#1c1b1b",
+                "surface-container-high": "#2a2a2a",
+                "inverse-primary": "#006c4d",
+                "primary-container": "#12b886",
+                "on-secondary-container": "#abb5cb",
+                "on-tertiary-container": "#00412e",
+                "secondary-fixed-dim": "#bdc7dc",
+                "on-secondary-fixed-variant": "#3d4759",
+                "surface-tint": "#50dea9",
+                "surface": "#131313",
+                "on-primary-fixed": "#002115",
+                "on-background": "#e5e2e1",
+                "background": "#131313",
+                "outline-variant": "#3c4a42",
+                "on-primary": "#003826",
+                "tertiary": "#44dfab",
+                "surface-container": "#201f1f",
+                "surface-dim": "#131313",
+                "surface-bright": "#3a3939",
+                "on-error-container": "#ffdad6",
+                "on-error": "#690005",
+                "surface-container-highest": "#353534",
+                "on-primary-container": "#00412d",
+                "secondary-fixed": "#d9e3f9",
+                "on-secondary": "#273141",
+                "surface-variant": "#353534",
+                "on-primary-fixed-variant": "#005139"
+              },
+              fontFamily: {
+                "headline": ["Manrope"],
+                "body": ["Inter"],
+                "label": ["Inter"]
+              },
+              borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+<style>
+        body { width: 350px; scrollbar-width: none; -ms-overflow-style: none; }
+        body::-webkit-scrollbar { display: none; }
+        .glass-panel { backdrop-filter: blur(24px); }
+        .text-shadow-sm { text-shadow: 0 0 12px rgba(80, 222, 169, 0.2); }
+        .tonal-shift { background: linear-gradient(180deg, #131313 0%, #0e0e0e 100%); }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-surface-container-lowest font-body text-on-surface select-none overflow-x-hidden">
+<!-- Top Navigation Bar (Shared Component Anchor) -->
+<header class="bg-neutral-950/60 backdrop-blur-xl shadow-[0_0_20px_rgba(80,222,169,0.05)] rounded-t-lg w-full sticky top-0 z-50 flex items-center justify-between px-4 py-3">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-400 font-bold text-xl tracking-tighter shadow-emerald-500/20 text-shadow-sm" data-icon="spa">spa</span>
+<div class="flex flex-col">
+<h1 class="font-manrope tracking-tight font-bold text-lg text-emerald-400">ZenTube</h1>
+</div>
+</div>
+<button class="text-neutral-500 hover:bg-neutral-800/50 transition-all duration-300 ease-in-out p-1.5 rounded-lg active:scale-90">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+</button>
+</header>
+<!-- Hero Identity Section -->
+<section class="px-5 pt-4 pb-6 tonal-shift">
+<p class="text-[11px] font-label uppercase tracking-[0.15em] text-primary/60 mb-1">Status: Protected</p>
+<h2 class="font-headline font-extrabold text-2xl tracking-tight text-on-surface">Stay focused. Stay Zen.</h2>
+</section>
+<!-- Main Content Canvas -->
+<main class="px-4 pb-20 space-y-4">
+<!-- Focus Mode (Active State Gradient) -->
+<div class="relative overflow-hidden group p-[1px] rounded-xl bg-gradient-to-br from-primary/30 to-tertiary/10">
+<div class="bg-surface-container-low p-4 rounded-[11px] flex items-center justify-between">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="bolt" style="font-variation-settings: 'FILL' 1;">bolt</span>
+</div>
+<div>
+<h3 class="font-headline font-bold text-sm text-on-surface">Focus Mode</h3>
+<p class="text-[11px] text-on-surface-variant">Instant declutter</p>
+</div>
+</div>
+<!-- Premium Switch -->
+<div class="w-10 h-5 bg-primary-container rounded-full relative flex items-center px-1">
+<div class="w-3.5 h-3.5 bg-on-primary-container rounded-full shadow-lg translate-x-4"></div>
+</div>
+</div>
+</div>
+<!-- Toggle List -->
+<div class="space-y-2">
+<!-- Item: Hide Homepage Feed -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-3 rounded-xl flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="home">home</span>
+<div>
+<p class="text-sm font-medium text-on-surface">Hide Homepage Feed</p>
+<p class="text-[10px] text-on-surface-variant leading-tight">Block endless recommendations</p>
+</div>
+</div>
+<div class="w-9 h-4 bg-outline-variant/30 rounded-full relative flex items-center px-0.5">
+<div class="w-3 h-3 bg-outline rounded-full"></div>
+</div>
+</div>
+<!-- Item: Hide Sidebar -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-3 rounded-xl flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="side_navigation">side_navigation</span>
+<div>
+<p class="text-sm font-medium text-on-surface">Hide Sidebar</p>
+<p class="text-[10px] text-on-surface-variant leading-tight">Remove "Up Next" distractions</p>
+</div>
+</div>
+<div class="w-9 h-4 bg-primary-container/40 rounded-full relative flex items-center px-0.5">
+<div class="w-3 h-3 bg-primary rounded-full translate-x-5"></div>
+</div>
+</div>
+<!-- Item: Hide Shorts -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-3 rounded-xl flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="block">block</span>
+<div>
+<p class="text-sm font-medium text-on-surface">Hide Shorts</p>
+<p class="text-[10px] text-on-surface-variant leading-tight">Say no to short-form loops</p>
+</div>
+</div>
+<div class="w-9 h-4 bg-primary-container/40 rounded-full relative flex items-center px-0.5">
+<div class="w-3 h-3 bg-primary rounded-full translate-x-5"></div>
+</div>
+</div>
+<!-- Item: Hide Comments -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-3 rounded-xl flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="chat_bubble">chat_bubble</span>
+<div>
+<p class="text-sm font-medium text-on-surface">Hide Comments</p>
+<p class="text-[10px] text-on-surface-variant leading-tight">Silence the noise</p>
+</div>
+</div>
+<div class="w-9 h-4 bg-outline-variant/30 rounded-full relative flex items-center px-0.5">
+<div class="w-3 h-3 bg-outline rounded-full"></div>
+</div>
+</div>
+<!-- Item: Blur Thumbnails -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-3 rounded-xl flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="blur_on">blur_on</span>
+<div>
+<p class="text-sm font-medium text-on-surface">Blur Thumbnails</p>
+<p class="text-[10px] text-on-surface-variant leading-tight">Prevent clickbait influence</p>
+</div>
+</div>
+<div class="w-9 h-4 bg-outline-variant/30 rounded-full relative flex items-center px-0.5">
+<div class="w-3 h-3 bg-outline rounded-full"></div>
+</div>
+</div>
+<!-- Item: Time Tracker -->
+<div class="bg-surface-container-low hover:bg-surface-container-high transition-colors p-3 rounded-xl flex items-center justify-between cursor-pointer group">
+<div class="flex items-center gap-3">
+<span class="material-symbols-outlined text-on-surface-variant group-hover:text-primary transition-colors" data-icon="timer">timer</span>
+<div>
+<p class="text-sm font-medium text-on-surface">Time Tracker</p>
+<p class="text-[10px] text-on-surface-variant leading-tight">Display session duration</p>
+</div>
+</div>
+<div class="w-9 h-4 bg-primary-container/40 rounded-full relative flex items-center px-0.5">
+<div class="w-3 h-3 bg-primary rounded-full translate-x-5"></div>
+</div>
+</div>
+</div>
+<!-- Blocking Sections -->
+<div class="space-y-4 pt-4">
+<!-- Blocked Keywords -->
+<div class="space-y-2">
+<label class="font-headline font-bold text-xs text-on-surface-variant flex items-center justify-between px-1">
+<span>Blocked Keywords</span>
+<span class="text-[10px] opacity-50 font-normal">0 active</span>
+</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-high border-none rounded-lg text-xs py-2 px-3 text-on-surface focus:ring-1 focus:ring-primary/40 placeholder:text-outline-variant" placeholder="e.g. Spoilers, Vlog..." type="text"/>
+<button class="bg-secondary-container hover:bg-secondary-container/80 text-on-secondary-container w-8 h-8 rounded-lg flex items-center justify-center transition-all active:scale-90">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+</button>
+</div>
+</div>
+<!-- Blocked Channels -->
+<div class="space-y-2">
+<label class="font-headline font-bold text-xs text-on-surface-variant flex items-center justify-between px-1">
+<span>Blocked Channels</span>
+<span class="text-[10px] opacity-50 font-normal">2 active</span>
+</label>
+<div class="flex gap-2">
+<input class="flex-1 bg-surface-container-high border-none rounded-lg text-xs py-2 px-3 text-on-surface focus:ring-1 focus:ring-primary/40 placeholder:text-outline-variant" placeholder="Channel URL or name" type="text"/>
+<button class="bg-secondary-container hover:bg-secondary-container/80 text-on-secondary-container w-8 h-8 rounded-lg flex items-center justify-center transition-all active:scale-90">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+</button>
+</div>
+<!-- Channel Tags Mockup -->
+<div class="flex flex-wrap gap-2 pt-1">
+<div class="bg-surface-container-highest px-2 py-1 rounded-md text-[10px] flex items-center gap-1.5 border border-outline-variant/10">
+<span>The Drama King</span>
+<span class="material-symbols-outlined text-[12px] cursor-pointer hover:text-error" data-icon="close">close</span>
+</div>
+<div class="bg-surface-container-highest px-2 py-1 rounded-md text-[10px] flex items-center gap-1.5 border border-outline-variant/10">
+<span>Clickbait Central</span>
+<span class="material-symbols-outlined text-[12px] cursor-pointer hover:text-error" data-icon="close">close</span>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Bottom Navigation Shell (Shared Component Anchor) -->
+<nav class="fixed bottom-0 left-0 w-full z-50 flex justify-around items-center px-4 py-2 pb-safe bg-neutral-950/80 backdrop-blur-2xl shadow-[0_-4px_24px_rgba(0,0,0,0.8)] border-t border-emerald-500/10 rounded-t-xl">
+<div class="flex flex-col items-center justify-center bg-emerald-500/10 text-emerald-400 rounded-xl p-2 shadow-[0_0_12px_rgba(80,222,169,0.15)] transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 p-2 hover:text-emerald-300 hover:bg-neutral-800/40 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="block">block</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 p-2 hover:text-emerald-300 hover:bg-neutral-800/40 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="timer">timer</span>
+</div>
+<div class="flex flex-col items-center justify-center text-neutral-500 p-2 hover:text-emerald-300 hover:bg-neutral-800/40 transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+</div>
+</nav>
+</body></html>
