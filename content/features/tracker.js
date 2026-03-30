@@ -8,7 +8,7 @@ let _sessionStart = null;
 let _trackingActive = false;
 
 function applyTimeTracker(settings) {
-  if (settings.timeTracker) {
+  if (settings.focusMode && settings.timeTracker) {
     _startTracking();
   } else {
     _stopTracking();

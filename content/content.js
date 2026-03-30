@@ -12,27 +12,19 @@ let _lastUrl = location.href;
 /**
  * Apply all active features based on current settings.
  */
+/**
+ * Apply all active features based on current settings.
+ */
 function applyAllFeatures(settings) {
-  if (!settings.focusMode) {
-    // Focus mode off — remove all zen styles
-    removeStyle('zen-hide-homepage');
-    removeStyle('zen-hide-sidebar');
-    removeStyle('zen-hide-shorts');
-    removeStyle('zen-hide-comments');
-    removeStyle('zen-blur-thumbnails');
-    removeStyle('zen-header-timer-style');
-    _stopTracking();
-    _removeZenHeaderTimer();
-    applyZenTheme(settings); // This will handle logo removal
-    return;
-  }
+  if (!settings) return;
 
+  // Each module handles settings.focusMode internal to its own logic
   applyHideHomepage(settings);
   applyHideSidebar(settings);
   applyHideShorts(settings);
   applyHideComments(settings);
   applyBlurThumbnails(settings);
-  applyZenTheme(settings); // Branding & Logo
+  applyZenTheme(settings);
   applyTimeTracker(settings);
   _handleVisibleTimer(settings);
   applyKeywordBlocking(settings);
@@ -114,6 +106,12 @@ function _removeZenHeaderTimer() {
  * Block videos whose title contains any blocked keyword.
  */
 function applyKeywordBlocking(settings) {
+  if (!settings.focusMode) {
+    const cards = document.querySelectorAll('ytd-video-renderer, ytd-rich-item-renderer, ytd-compact-video-renderer');
+    cards.forEach(c => c.style.removeProperty('display'));
+    return;
+  }
+
   const keywords = settings.blockedKeywords || [];
   if (keywords.length === 0) return;
 
@@ -133,10 +131,13 @@ function applyKeywordBlocking(settings) {
   });
 }
 
-/**
- * Block videos from blocked channels.
- */
 function applyChannelBlocking(settings) {
+  if (!settings.focusMode) {
+    const cards = document.querySelectorAll('ytd-video-renderer, ytd-rich-item-renderer, ytd-compact-video-renderer');
+    cards.forEach(c => c.style.removeProperty('display'));
+    return;
+  }
+
   const channels = settings.blockedChannels || [];
   if (channels.length === 0) return;
 
@@ -196,7 +197,7 @@ function startMutationObserver() {
 /* ─── Live Settings Update from Popup ─────────────────────────── */
 
 chrome.storage.onChanged.addListener((changes, area) => {
-  if (area !== 'sync') return;
+  if (area !== 'sync' || !_currentSettings) return;
 
   // Merge updated keys into current settings
   Object.keys(changes).forEach(key => {

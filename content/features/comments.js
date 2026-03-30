@@ -4,6 +4,10 @@
  */
 
 function applyHideComments(settings) {
+  if (!settings.focusMode) {
+    removeStyle('zen-hide-comments');
+    return;
+  }
   if (settings.hideComments) {
     injectStyle('zen-hide-comments', `
       #comments,

@@ -27,7 +27,7 @@ function initPremiumZen() {
     const performSearch = () => {
         const query = searchInput.value.trim();
         if (query) {
-            window.location.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
+            window.top.location.href = `https://www.youtube.com/results?search_query=${encodeURIComponent(query)}`;
         }
     };
 

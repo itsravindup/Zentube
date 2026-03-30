@@ -1,185 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ZenTube</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Playfair+Display:ital@1&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="popup.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZenTube Premium</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="popup.css">
 </head>
 <body>
-
-  <div class="zen-panel" id="zenPanel">
-
-    <!-- ── Header ─────────────────────────────────────── -->
+    <!-- Top Navigation -->
     <header class="zen-header">
-      <div class="zen-logo">
-        <div class="zen-logo-z-box">Z</div>
-        <span class="zen-brand">ZenTube</span>
-      </div>
-      <p class="zen-subtitle">Stay focused. Stay Zen.</p>
+        <div class="brand-section">
+            <span class="material-symbols-outlined brand-icon">spa</span>
+            <h1 class="brand-name font-manrope tracking-tight">ZenTube</h1>
+        </div>
+        <button class="settings-btn" id="openOptions">
+            <span class="material-symbols-outlined">settings</span>
+        </button>
     </header>
 
-    <!-- ── Master Toggle ──────────────────────────────── -->
-    <section class="zen-master-section" id="masterSection">
-      <div class="zen-master-row">
-        <div class="zen-master-label">
-          <span class="zen-master-title">Focus Mode</span>
-          <span class="zen-master-desc">Master control</span>
-        </div>
-        <label class="zen-toggle zen-toggle--large" for="focusMode" aria-label="Toggle Focus Mode">
-          <input type="checkbox" id="focusMode" class="zen-toggle__input" />
-          <span class="zen-toggle__track">
-            <span class="zen-toggle__thumb"></span>
-          </span>
-        </label>
-      </div>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <p class="status-label font-manrope">Status: Protected</p>
+        <h2 class="hero-title font-manrope">Stay focused. Stay Zen.</h2>
     </section>
 
-    <!-- ── Divider ─────────────────────────────────────── -->
-    <div class="zen-divider"></div>
-
-    <!-- ── Feature Toggles ───────────────────────────── -->
-    <section class="zen-features" id="featureControls">
-
-      <div class="zen-row" data-key="hideHomepage">
-        <div class="zen-row__info">
-          <span class="zen-row__icon">🏠</span>
-          <div>
-            <span class="zen-row__label">Hide Homepage Feed</span>
-            <span class="zen-row__desc">No algorithmic recommendations</span>
-          </div>
+    <!-- Main Content -->
+    <main>
+        <!-- Master Toggle Card -->
+        <div class="focus-mode-card">
+            <div class="focus-mode-inner">
+                <div class="focus-mode-info">
+                    <div class="focus-icon-box">
+                        <span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">bolt</span>
+                    </div>
+                    <div>
+                        <h3 class="focus-mode-title font-manrope">Focus Mode</h3>
+                        <p class="focus-mode-desc">Instant digital silence</p>
+                    </div>
+                </div>
+                <!-- Master Switch -->
+                <label class="zen-switch zen-switch--large" for="focusMode">
+                    <input type="checkbox" id="focusMode">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
         </div>
-        <label class="zen-toggle" for="hideHomepage" aria-label="Toggle Hide Homepage Feed">
-          <input type="checkbox" id="hideHomepage" class="zen-toggle__input" />
-          <span class="zen-toggle__track">
-            <span class="zen-toggle__thumb"></span>
-          </span>
-        </label>
-      </div>
 
-      <div class="zen-row" data-key="hideSidebarWatch">
-        <div class="zen-row__info">
-          <span class="zen-row__icon">📌</span>
-          <div>
-            <span class="zen-row__label">Hide Sidebar</span>
-            <span class="zen-row__desc">Remove "Up Next" recommendations</span>
-          </div>
+        <!-- Individual Features -->
+        <div class="toggle-list">
+            <!-- Hide Homepage -->
+            <div class="toggle-item" id="row-hideHomepage">
+                <div class="toggle-info">
+                    <span class="material-symbols-outlined feature-icon">home</span>
+                    <div>
+                        <p class="feature-label">Hide Homepage Feed</p>
+                        <p class="feature-desc">Block endless recommendations</p>
+                    </div>
+                </div>
+                <label class="zen-switch" for="hideHomepage">
+                    <input type="checkbox" id="hideHomepage">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+
+            <!-- Hide Sidebar -->
+            <div class="toggle-item" id="row-hideSidebarWatch">
+                <div class="toggle-info">
+                    <span class="material-symbols-outlined feature-icon">side_navigation</span>
+                    <div>
+                        <p class="feature-label">Hide Sidebar</p>
+                        <p class="feature-desc">Remove "Up Next" distractions</p>
+                    </div>
+                </div>
+                <label class="zen-switch" for="hideSidebarWatch">
+                    <input type="checkbox" id="hideSidebarWatch">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+
+            <!-- Hide Shorts -->
+            <div class="toggle-item" id="row-hideShorts">
+                <div class="toggle-info">
+                    <span class="material-symbols-outlined feature-icon">block</span>
+                    <div>
+                        <p class="feature-label">Hide Shorts</p>
+                        <p class="feature-desc">Say no to short-form loops</p>
+                    </div>
+                </div>
+                <label class="zen-switch" for="hideShorts">
+                    <input type="checkbox" id="hideShorts">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+
+            <!-- Hide Comments -->
+            <div class="toggle-item" id="row-hideComments">
+                <div class="toggle-info">
+                    <span class="material-symbols-outlined feature-icon">chat_bubble</span>
+                    <div>
+                        <p class="feature-label">Hide Comments</p>
+                        <p class="feature-desc">Silence the noise</p>
+                    </div>
+                </div>
+                <label class="zen-switch" for="hideComments">
+                    <input type="checkbox" id="hideComments">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+
+            <!-- Blur Thumbnails -->
+            <div class="toggle-item" id="row-blurThumbnails">
+                <div class="toggle-info">
+                    <span class="material-symbols-outlined feature-icon">blur_on</span>
+                    <div>
+                        <p class="feature-label">Blur Thumbnails</p>
+                        <p class="feature-desc">Prevent clickbait influence</p>
+                    </div>
+                </div>
+                <label class="zen-switch" for="blurThumbnails">
+                    <input type="checkbox" id="blurThumbnails">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
+
+            <!-- Time Tracker -->
+            <div class="toggle-item" id="row-timeTracker">
+                <div class="toggle-info">
+                    <span class="material-symbols-outlined feature-icon">timer</span>
+                    <div>
+                        <p class="feature-label">Time Tracker</p>
+                        <p class="feature-desc" id="todayUsageDesc">Display session duration</p>
+                    </div>
+                </div>
+                <label class="zen-switch" for="timeTracker">
+                    <input type="checkbox" id="timeTracker">
+                    <span class="switch-slider"></span>
+                </label>
+            </div>
         </div>
-        <label class="zen-toggle" for="hideSidebarWatch" aria-label="Toggle Hide Sidebar">
-          <input type="checkbox" id="hideSidebarWatch" class="zen-toggle__input" />
-          <span class="zen-toggle__track">
-            <span class="zen-toggle__thumb"></span>
-          </span>
-        </label>
-      </div>
 
-      <div class="zen-row" data-key="hideShorts">
-        <div class="zen-row__info">
-          <span class="zen-row__icon">⚡</span>
-          <div>
-            <span class="zen-row__label">Hide Shorts</span>
-            <span class="zen-row__desc">Block infinite short-form content</span>
-          </div>
+        <!-- Blocking Sections -->
+        <div class="block-section">
+            <!-- Keywords -->
+            <div class="block-group">
+                <div class="section-label-row">
+                    <span class="section-label font-manrope">Blocked Keywords</span>
+                    <span class="section-count" id="keywordCount">0 active</span>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="keywordInput" class="zen-input" placeholder="e.g. Spoilers, Vlog...">
+                    <button class="add-btn" id="addKeyword">
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem;">add</span>
+                    </button>
+                </div>
+                <div class="tag-container" id="keywordTags"></div>
+            </div>
+
+            <!-- Channels -->
+            <div class="block-group">
+                <div class="section-label-row">
+                    <span class="section-label font-manrope">Blocked Channels</span>
+                    <span class="section-count" id="channelCount">0 active</span>
+                </div>
+                <div class="input-group">
+                    <input type="text" id="channelInput" class="zen-input" placeholder="Channel URL or name">
+                    <button class="add-btn" id="addChannel">
+                        <span class="material-symbols-outlined" style="font-size: 1.1rem;">add</span>
+                    </button>
+                </div>
+                <div class="tag-container" id="channelTags"></div>
+            </div>
         </div>
-        <label class="zen-toggle" for="hideShorts" aria-label="Toggle Hide Shorts">
-          <input type="checkbox" id="hideShorts" class="zen-toggle__input" />
-          <span class="zen-toggle__track">
-            <span class="zen-toggle__thumb"></span>
-          </span>
-        </label>
-      </div>
+    </main>
 
-      <div class="zen-row" data-key="hideComments">
-        <div class="zen-row__info">
-          <span class="zen-row__icon">💬</span>
-          <div>
-            <span class="zen-row__label">Hide Comments</span>
-            <span class="zen-row__desc">Silence the noise below videos</span>
-          </div>
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <div class="nav-item active">
+            <span class="material-symbols-outlined">home</span>
         </div>
-        <label class="zen-toggle" for="hideComments" aria-label="Toggle Hide Comments">
-          <input type="checkbox" id="hideComments" class="zen-toggle__input" />
-          <span class="zen-toggle__track">
-            <span class="zen-toggle__thumb"></span>
-          </span>
-        </label>
-      </div>
-
-      <div class="zen-row" data-key="blurThumbnails">
-        <div class="zen-row__info">
-          <span class="zen-row__icon">🫧</span>
-          <div>
-            <span class="zen-row__label">Blur Thumbnails</span>
-            <span class="zen-row__desc">Reduce visual clickbait triggers</span>
-          </div>
+        <div class="nav-item">
+            <span class="material-symbols-outlined">block</span>
         </div>
-        <label class="zen-toggle" for="blurThumbnails" aria-label="Toggle Blur Thumbnails">
-          <input type="checkbox" id="blurThumbnails" class="zen-toggle__input" />
-          <span class="zen-toggle__track">
-            <span class="zen-toggle__thumb"></span>
-          </span>
-        </label>
-      </div>
-
-      <div class="zen-row" data-key="timeTracker">
-        <div class="zen-row__info">
-          <span class="zen-row__icon">⏱</span>
-          <div>
-            <span class="zen-row__label">Time Tracker</span>
-            <span class="zen-row__desc" id="todayUsageDesc">Track daily YouTube usage</span>
-          </div>
+        <div class="nav-item">
+            <span class="material-symbols-outlined">timer</span>
         </div>
-        <label class="zen-toggle" for="timeTracker" aria-label="Toggle Time Tracker">
-          <input type="checkbox" id="timeTracker" class="zen-toggle__input" />
-          <span class="zen-toggle__track">
-            <span class="zen-toggle__thumb"></span>
-          </span>
-        </label>
-      </div>
+        <div class="nav-item">
+            <span class="material-symbols-outlined">person</span>
+        </div>
+    </nav>
 
-    </section>
+    <!-- Hidden Feedback -->
+    <div id="feedbackBanner" style="display:none"></div>
 
-    <!-- ── Blocked Keywords ───────────────────────────── -->
-    <div class="zen-divider"></div>
-    <section class="zen-block-section">
-      <h3 class="zen-block-title">🚫 Blocked Keywords</h3>
-      <div class="zen-tag-row" id="keywordTags"></div>
-      <div class="zen-input-row">
-        <input type="text" id="keywordInput" class="zen-input" placeholder="e.g. clickbait, drama…" maxlength="60" />
-        <button id="addKeyword" class="zen-add-btn" aria-label="Add keyword">+</button>
-      </div>
-    </section>
-
-    <!-- ── Blocked Channels ───────────────────────────── -->
-    <section class="zen-block-section">
-      <h3 class="zen-block-title">📺 Blocked Channels</h3>
-      <div class="zen-tag-row" id="channelTags"></div>
-      <div class="zen-input-row">
-        <input type="text" id="channelInput" class="zen-input" placeholder="e.g. MrBeast, Logan Paul…" maxlength="60" />
-        <button id="addChannel" class="zen-add-btn" aria-label="Add channel">+</button>
-      </div>
-    </section>
-
-    <!-- ── Feedback Banner ────────────────────────────── -->
-    <div class="zen-feedback" id="feedbackBanner" role="status" aria-live="polite">
-      Settings Updated ✓
-    </div>
-
-    <!-- ── Footer ─────────────────────────────────────── -->
-    <footer class="zen-footer">
-      <span class="zen-footer__text">You are in control.</span>
-      <span class="zen-footer__status">
-        <span class="zen-status-dot" id="statusDot"></span>
-        <span id="statusLabel">Focus Active</span>
-      </span>
-    </footer>
-
-  </div>
-
-  <script src="../utils/storage.js"></script>
-  <script src="popup.js"></script>
+    <script src="../utils/storage.js"></script>
+    <script src="popup.js"></script>
 </body>
 </html>

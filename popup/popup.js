@@ -4,22 +4,20 @@
  */
 
 /* ── DOM references ───────────────────────────────────────────── */
-const panel         = document.getElementById('zenPanel');
+const body          = document.body;
 const masterToggle  = document.getElementById('focusMode');
-const masterSection = document.getElementById('masterSection');
-const featureControls = document.getElementById('featureControls');
-const feedbackBanner  = document.getElementById('feedbackBanner');
-const statusDot     = document.getElementById('statusDot');
-const statusLabel   = document.getElementById('statusLabel');
-const todayUsageDesc = document.getElementById('todayUsageDesc');
-
 const keywordInput  = document.getElementById('keywordInput');
 const addKeywordBtn = document.getElementById('addKeyword');
 const keywordTags   = document.getElementById('keywordTags');
+const keywordCount  = document.getElementById('keywordCount');
 
 const channelInput  = document.getElementById('channelInput');
 const addChannelBtn = document.getElementById('addChannel');
 const channelTags   = document.getElementById('channelTags');
+const channelCount  = document.getElementById('channelCount');
+
+const todayUsageDesc = document.getElementById('todayUsageDesc');
+const openOptionsBtn = document.getElementById('openOptions');
 
 /* ── Toggle keys bound to checkboxes ─────────────────────────── */
 const TOGGLE_KEYS = [
@@ -32,7 +30,6 @@ const TOGGLE_KEYS = [
 ];
 
 let _settings = {};
-let _feedbackTimer = null;
 
 /* ── Initialize popup ─────────────────────────────────────────── */
 async function init() {
@@ -45,7 +42,7 @@ async function init() {
 /* ── Render UI from settings ──────────────────────────────────── */
 function renderUI() {
   // Master toggle
-  masterToggle.checked = _settings.focusMode;
+  masterToggle.checked = !!_settings.focusMode;
   updateFocusModeAppearance(_settings.focusMode);
 
   // Feature toggles
@@ -57,20 +54,17 @@ function renderUI() {
   // Tags
   renderTags(keywordTags, _settings.blockedKeywords || [], 'keyword');
   renderTags(channelTags, _settings.blockedChannels || [], 'channel');
+  
+  // Update counts
+  updateCounts();
 }
 
 /* ── Focus Mode visual state ──────────────────────────────────── */
 function updateFocusModeAppearance(active) {
   if (active) {
-    panel.classList.remove('focus-off');
-    masterSection.classList.add('is-active');
-    statusDot.classList.add('is-active');
-    statusLabel.textContent = 'Focus Active';
+    body.classList.remove('focus-mode-off');
   } else {
-    panel.classList.add('focus-off');
-    masterSection.classList.remove('is-active');
-    statusDot.classList.remove('is-active');
-    statusLabel.textContent = 'Focus Off';
+    body.classList.add('focus-mode-off');
   }
 }
 
@@ -99,22 +93,37 @@ function _getTodayKey() {
 function renderTags(container, items, type) {
   container.innerHTML = '';
   items.forEach((item, idx) => {
-    const tag = document.createElement('span');
+    const tag = document.createElement('div');
     tag.className = 'zen-tag';
 
     const label = document.createElement('span');
     label.textContent = item;
 
-    const removeBtn = document.createElement('button');
-    removeBtn.className = 'zen-tag__remove';
-    removeBtn.innerHTML = '&times;';
+    const removeBtn = document.createElement('span');
+    removeBtn.className = 'material-symbols-outlined tag-remove';
+    removeBtn.textContent = 'close';
     removeBtn.title = `Remove "${item}"`;
-    removeBtn.addEventListener('click', () => removeItem(type, idx));
+    removeBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      removeItem(type, idx);
+    });
 
     tag.appendChild(label);
     tag.appendChild(removeBtn);
     container.appendChild(tag);
   });
+  updateCounts();
+}
+
+function updateCounts() {
+  if (keywordCount) {
+    const count = (_settings.blockedKeywords || []).length;
+    keywordCount.textContent = `${count} active`;
+  }
+  if (channelCount) {
+    const count = (_settings.blockedChannels || []).length;
+    channelCount.textContent = `${count} active`;
+  }
 }
 
 /* ── Add / Remove items ────────────────────────────────────────── */
@@ -161,14 +170,27 @@ function bindListeners() {
     persist();
   });
 
-  // Feature toggles
+  // Feature toggles + Row Click
   TOGGLE_KEYS.forEach(key => {
     const el = document.getElementById(key);
-    if (!el) return;
-    el.addEventListener('change', () => {
-      _settings[key] = el.checked;
-      persist();
-    });
+    const row = document.getElementById(`row-${key}`);
+    
+    if (el) {
+      el.addEventListener('change', () => {
+        _settings[key] = el.checked;
+        persist();
+      });
+    }
+    
+    if (row && el) {
+      row.addEventListener('click', (e) => {
+        // Prevent recursive clicks if the checkbox itself was clicked
+        if (e.target.tagName !== 'INPUT' && !e.target.closest('.zen-switch')) {
+          el.checked = !el.checked;
+          el.dispatchEvent(new Event('change'));
+        }
+      });
+    }
   });
 
   // Keyword / Channel add buttons
@@ -182,20 +204,18 @@ function bindListeners() {
   channelInput.addEventListener('keydown', e => {
     if (e.key === 'Enter') addItem('channel');
   });
+
+  // Options page
+  if (openOptionsBtn) {
+    openOptionsBtn.addEventListener('click', () => {
+      chrome.runtime.openOptionsPage();
+    });
+  }
 }
 
-/* ── Save to storage + show feedback ──────────────────────────── */
+/* ── Save to storage ──────────────────────────────────────────── */
 async function persist() {
   await saveSettings(_settings);
-  showFeedback();
-}
-
-function showFeedback() {
-  feedbackBanner.classList.add('is-visible');
-  clearTimeout(_feedbackTimer);
-  _feedbackTimer = setTimeout(() => {
-    feedbackBanner.classList.remove('is-visible');
-  }, 2000);
 }
 
 /* ── Boot ──────────────────────────────────────────────────────── */

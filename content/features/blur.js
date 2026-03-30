@@ -5,6 +5,10 @@
  */
 
 function applyBlurThumbnails(settings) {
+  if (!settings.focusMode) {
+    removeStyle('zen-blur-thumbnails');
+    return;
+  }
   if (settings.blurThumbnails) {
     injectStyle('zen-blur-thumbnails', `
       ytd-thumbnail img,

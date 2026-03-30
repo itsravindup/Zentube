@@ -4,6 +4,12 @@
  */
 
 function applyHideShorts(settings) {
+  if (!settings.focusMode) {
+    removeStyle('zen-hide-shorts');
+    _showShortsLinks();
+    _showShortsShelves();
+    return;
+  }
   if (settings.hideShorts) {
     injectStyle('zen-hide-shorts', `
       ytd-reel-shelf-renderer,

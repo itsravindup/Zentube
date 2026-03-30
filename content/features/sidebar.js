@@ -5,6 +5,11 @@
  */
 
 function applyHideSidebar(settings) {
+  if (!settings.focusMode) {
+    removeStyle('zen-hide-sidebar');
+    return;
+  }
+
   const isWatchPage = window.location.pathname === '/watch';
 
   if (settings.hideSidebarAll) {
