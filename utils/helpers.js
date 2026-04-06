@@ -1,5 +1,5 @@
 /**
- * ZenTube — DOM Helpers
+ * ModeTube — DOM Helpers
  * Shared utility functions used by all feature modules.
  * MUST be loaded before feature modules in manifest.json.
  */

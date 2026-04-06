@@ -1,6 +1,6 @@
 {
   "manifest_version": 3,
-  "name": "ZenTube",
+  "name": "ModeTube",
   "version": "1.0.0",
   "description": "Transform YouTube into a distraction-free, mindful experience. Remove feeds, shorts, comments and stay in control.",
   "icons": {
@@ -15,7 +15,7 @@
       "48": "icons/icon48.png",
       "128": "icons/icon128.png"
     },
-    "default_title": "ZenTube — Stay Focused"
+    "default_title": "ModeTube — Stay Focused"
   },
   "permissions": [
     "storage"

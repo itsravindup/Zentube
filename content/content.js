@@ -1,5 +1,5 @@
 /**
- * ZenTube — Main Content Script Orchestrator
+ * ModeTube — Main Content Script Orchestrator
  * Loads settings, applies all features, and watches for YouTube SPA navigation.
  * Helpers (injectStyle, removeStyle) are provided by utils/helpers.js (loaded first).
  */

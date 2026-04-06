@@ -1,5 +1,5 @@
 """
-ZenTube Icon Generator
+ModeTube Icon Generator
 Generates 16x16, 48x48, 128x128 PNG icons using only stdlib.
 """
 import struct, zlib, math, os

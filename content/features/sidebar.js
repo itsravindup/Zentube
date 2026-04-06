@@ -1,5 +1,5 @@
 /**
- * ZenTube — Feature: Hide Sidebar Recommendations
+ * ModeTube — Feature: Hide Sidebar Recommendations
  * Hides the "Up Next" / related video sidebar.
  * Supports watch-only mode and global hide mode.
  */

@@ -1,6 +1,6 @@
 /**
- * ZenTube — Feature: Theme & Branding
- * Replaces YouTube logo with ZenTube and applies green accents.
+ * ModeTube — Feature: Theme & Branding
+ * Replaces YouTube logo with ModeTube and applies green accents.
  */
 
 function applyZenTheme(settings) {
@@ -20,7 +20,7 @@ function applyZenTheme(settings) {
         display: none !important;
       }
 
-      /* Custom ZenTube logo container */
+      /* Custom ModeTube logo container */
       .zen-logo-replacement {
         display: flex;
         align-items: center;
@@ -103,8 +103,8 @@ function _injectZenLogo() {
   const zenLogo = document.createElement('div');
   zenLogo.className = 'zen-logo-replacement';
   zenLogo.innerHTML = `
-    <div class="zen-logo-z-box">Z</div>
-    <span class="zen-logo-text">ZenTube</span>
+    <div class="zen-logo-z-box">M</div>
+    <span class="zen-logo-text">ModeTube</span>
   `;
 
   // Click logo to go home

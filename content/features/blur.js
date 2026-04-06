@@ -1,5 +1,5 @@
 /**
- * ZenTube — Feature: Blur Thumbnails
+ * ModeTube — Feature: Blur Thumbnails
  * Applies a blur filter to all YouTube video thumbnails.
  * Removes blur on hover for intentional browsing.
  */

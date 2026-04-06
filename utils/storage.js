@@ -1,5 +1,5 @@
 /**
- * ZenTube — Storage Utility
+ * ModeTube — Storage Utility
  * Handles reading/writing settings to chrome.storage.sync
  */
 
@@ -17,7 +17,7 @@ const ZEN_DEFAULTS = {
 };
 
 /**
- * Get all ZenTube settings, merged with defaults.
+ * Get all ModeTube settings, merged with defaults.
  * @returns {Promise<Object>} Resolved settings object
  */
 function getSettings() {

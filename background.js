@@ -1,5 +1,5 @@
 /**
- * ZenTube — Background Service Worker
+ * ModeTube — Background Service Worker
  * Minimal background script required by MV3.
  * Initializes default settings on first install.
  */
@@ -19,7 +19,7 @@ chrome.runtime.onInstalled.addListener((details) => {
       blockedChannels: []
     };
     chrome.storage.sync.set(defaults, () => {
-      console.log('[ZenTube] Default settings initialized.');
+      console.log('[ModeTube] Default settings initialized.');
     });
   }
 });

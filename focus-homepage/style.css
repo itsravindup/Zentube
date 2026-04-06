@@ -21,12 +21,13 @@ body {
     background-color: var(--surface-lowest);
     color: var(--on-surface);
     font-family: 'Inter', system-ui, sans-serif;
-    height: 100vh;
+    min-height: 100vh;
     width: 100vw;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     position: relative;
     user-select: none;
 }
@@ -119,9 +120,11 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 900px; /* Increased from 640px */
+    max-width: 1100px;
     text-align: center;
     padding: 0 40px;
+    margin-top: 15vh;
+    margin-bottom: 8vh;
 }
 
 /* Branding */
@@ -351,3 +354,240 @@ body {
 .zen-brand.fade-in { animation-delay: 0.1s; }
 .zen-search-section.fade-in { animation-delay: 0.3s; }
 .zen-footer.fade-in { animation-delay: 0.5s; }
+
+/* Focus Library Section */
+.zen-library-section {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 4rem;
+    padding-bottom: 8rem; /* Space for footer */
+}
+
+.library-header-main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    color: var(--on-surface-variant);
+}
+
+.library-icon {
+    font-family: 'Material Symbols Outlined';
+    font-size: 1.5rem;
+    color: var(--primary);
+    opacity: 0.8;
+}
+
+.library-title {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+}
+
+/* Add UI */
+.library-add-container {
+    display: flex;
+    gap: 0.75rem;
+    background: var(--surface-low);
+    backdrop-filter: blur(24px);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    border-radius: 1.25rem;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    transition: all 0.4s ease;
+}
+
+.library-add-container:focus-within {
+    border-color: rgba(80, 222, 169, 0.2);
+}
+
+.library-input-group {
+    flex-grow: 1;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.library-input-group input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: var(--on-surface);
+    font-family: inherit;
+    font-size: 0.95rem;
+    padding: 0.75rem 1rem;
+    width: 50%;
+}
+
+.library-input-group input::placeholder {
+    color: var(--on-surface-variant);
+    opacity: 0.5;
+}
+
+.lib-add-btn {
+    background: var(--surface-high);
+    color: var(--on-surface);
+    border: none;
+    border-radius: 0.85rem;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s ease;
+}
+
+.lib-add-btn:hover {
+    background: var(--primary);
+    color: #000;
+}
+
+/* Error Messages */
+.library-error-msg {
+    color: #ff5f5f;
+    font-size: 0.8rem;
+    margin-bottom: 1rem;
+    height: 1rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.library-error-msg.visible {
+    opacity: 1;
+}
+
+/* Displays */
+.library-display {
+    width: 100%;
+}
+
+.folder-section {
+    margin-bottom: 2.5rem;
+    text-align: left;
+}
+
+.folder-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 1.25rem;
+}
+
+.folder-info {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+}
+
+.folder-name {
+    font-family: 'Manrope', sans-serif;
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: var(--on-surface);
+}
+
+.video-count {
+    font-size: 0.75rem;
+    color: var(--on-surface-variant);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Video Items */
+.videos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.video-item {
+    position: relative;
+    background: rgba(28, 27, 27, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    border-radius: 1rem;
+    overflow: hidden;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.video-item:hover {
+    transform: translateY(-4px);
+    border-color: rgba(80, 222, 169, 0.3);
+    background: rgba(28, 27, 27, 0.8);
+    box-shadow: 0 12px 24px -8px rgba(0,0,0,0.5);
+}
+
+.thumb-container {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+
+.video-thumb {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.video-item:hover .video-thumb {
+    transform: scale(1.05);
+}
+
+.video-info {
+    padding: 1rem;
+}
+
+.video-title {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--on-surface);
+    line-height: 1.4;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    line-clamp: 2;
+    overflow: hidden;
+}
+
+.delete-video {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    background: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(4px);
+    border: none;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: scale(0.8);
+    transition: all 0.3s ease;
+    z-index: 5;
+}
+
+.video-item:hover .delete-video {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.delete-video:hover {
+    background: #ff5f5f;
+    color: #fff;
+}
+
+.delete-video span {
+    font-size: 1.1rem;
+}

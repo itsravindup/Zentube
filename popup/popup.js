@@ -1,5 +1,5 @@
 /**
- * ZenTube — Popup Controller
+ * ModeTube —  Popup Controller
  * Manages UI state, settings sync, and all interactions.
  */
 

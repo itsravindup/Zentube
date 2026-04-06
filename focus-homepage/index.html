@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZenTube — Stay Focused</title>
+    <title>ModeTube — Stay Focused</title>
     <!-- Fonts and Icons -->
     <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet">
@@ -28,9 +28,9 @@
         <section class="zen-brand fade-in">
             <div class="zen-logo-box group">
                 <div class="zen-logo-gradient"></div>
-                <span class="zen-logo-char">Z</span>
+                <span class="zen-logo-char">M</span>
             </div>
-            <h1 class="zen-title">ZenTube</h1>
+            <h1 class="zen-title">ModeTube</h1>
             <p class="zen-tagline">Intentional Viewing</p>
         </section>
 
@@ -59,23 +59,44 @@
                 </div>
             </div>
         </section>
+
+        <!-- Focus Library Section -->
+        <section class="zen-library-section fade-in">
+            <div class="library-header-main" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <div style="display: flex; align-items: center; gap: 0.75rem; color: var(--on-surface-variant);">
+                    <span class="library-icon">folder_open</span>
+                    <h2 class="library-title">Your Focus Library</h2>
+                </div>
+                <div class="library-search" style="position: relative;">
+                    <span class="material-symbols-outlined" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); font-size: 1.1rem; color: var(--on-surface-variant); opacity: 0.6;">search</span>
+                    <input type="text" id="lib-search-input" placeholder="Search library..." style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.05); border-radius: 9999px; padding: 6px 12px 6px 36px; color: var(--on-surface); outline: none; font-family: inherit; font-size: 0.85rem; width: 180px; transition: all 0.3s;">
+                </div>
+            </div>
+
+            <!-- Add Link UI -->
+            <div class="library-add-container">
+                <div class="library-input-group">
+                    <input type="text" id="lib-link-input" placeholder="Paste YouTube link..." autocomplete="off">
+                    <input type="text" id="lib-folder-input" list="folder-options" placeholder="Folder name (e.g. Study)" autocomplete="off">
+                    <datalist id="folder-options"></datalist>
+                </div>
+                <button id="lib-add-btn" class="lib-add-btn">
+                    <span class="material-symbols-outlined">add</span>
+                    <span>Add</span>
+                </button>
+            </div>
+            
+            <!-- Error Message -->
+            <div id="library-error" class="library-error-msg"></div>
+
+            <!-- Library Content Rendering Area -->
+            <div id="library-display" class="library-display">
+                <!-- Dynamically populated -->
+            </div>
+        </section>
     </main>
 
-    <!-- Footer Controls -->
-    <footer class="zen-footer fade-in">
-        <button class="footer-btn">
-            <span class="icon-settings">settings</span>
-            <span class="btn-text">Preferences</span>
-        </button>
-        <button class="footer-btn">
-            <span class="icon-zen">auto_awesome</span>
-            <span class="btn-text">Zen Mode</span>
-        </button>
-        <button class="footer-btn">
-            <span class="icon-history">history</span>
-            <span class="btn-text">Mindful Log</span>
-        </button>
-    </footer>
+
 
     <!-- Corner Accents -->
     <div class="accent-top-left"></div>

@@ -1,5 +1,5 @@
 /**
- * ZenTube — Feature: Hide Comments
+ * ModeTube — Feature: Hide Comments
  * Hides the entire comments section on watch pages.
  */
 

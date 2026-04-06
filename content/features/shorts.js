@@ -1,5 +1,5 @@
 /**
- * ZenTube — Feature: Hide Shorts
+ * ModeTube — Feature: Hide Shorts
  * Hides YouTube Shorts shelf and any Shorts links.
  */
 
